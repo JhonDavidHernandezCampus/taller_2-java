@@ -1,9 +1,8 @@
-/* 2. Dado un número indicar si es par o impar y si es mayor de 10. */
+/* 2. Construir el algoritmo para determinar el voltaje de un
+circuito a partir de la resistencia y la intensidad de corriente. */
 
-let numero = Number(prompt(`Ingrese un numero `));
+let resis = Number(prompt(`Ingrese la resistencia de la corriente en (ohmios)`));
+let intes = Number(prompt(`Ingrese la intensidad ed la corriente (Amperios)`));
 
-let paoin= numero%2
-
-paoin=0 ? console.log("El numero es par") : console.log(`El numero ${numero} es impar`);
-
-
+console.log(`El voltaje de un circuito con una intensidaad de corriente= ${intes} ohmios Y 
+una resistencia= ${resis} Amperios es : \n V=${resis* intes} Voltios`)
