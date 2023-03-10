@@ -1,8 +1,27 @@
-/* 2. Construir el algoritmo para determinar el voltaje de un
-circuito a partir de la resistencia y la intensidad de corriente. */
+/*
+ 4. Construir el algoritmo que solicite el nombre y edad de 3
+personas y determine el nombre de la persona con mayor edad.
 
-let resis = Number(prompt(`Ingrese la resistencia de la corriente en (ohmios)`));
-let intes = Number(prompt(`Ingrese la intensidad ed la corriente (Amperios)`));
+*/
+let datos={
+    anombre:[],
+    edad:[]
+}
+let cont=0;
+let mayor=0;
+for(let i=0; i<3 ; i++){
+    let nom = prompt("ingrese se nombre: ")
+    let edad = Number(prompt(`ingrese su edad Miss ${nom}`));
+    datos.edad.push(edad)
+    datos.anombre.push(nom)
+}
+for(let i=0;i<datos.edad.length;i++)
+    if(mayor< datos.edad[i] ){
+        mayor=datos.edad[i]
+        cont=i
+        
+}
+let pos = datos.edad.indexOf(mayor)
+console.table(`${datos.anombre} ${datos.edad}`)
+console.log(`la persona con mayor edad es ${datos.anombre[pos]} con una edad de ${mayor}`)
 
-console.log(`El voltaje de un circuito con una intensidaad de corriente= ${intes} ohmios Y 
-una resistencia= ${resis} Amperios es : \n V=${resis* intes} Voltios`)
