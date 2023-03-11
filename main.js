@@ -1,27 +1,35 @@
 /*
-7. Programa que pida el ingreso del nombre y precio de un artículo y la
-cantidad que lleva el cliente. Mostrar lo que debe pagar el comprador
-en su factura.
+8. Programa que Ingrese por teclado:
+a. el valor del lado de un cuadrado para mostrar por pantalla el
+perímetro del mismo
+b. la base y la altura de un rectángulo para mostrar el área del
+mismo
 */
 let datos = {
-    nombre:[],
-    precio:[],
-    cantidad:[]   
-}
-let can="si";
-while(can=="si"){
-    let nom = prompt("Ingrese el nombre del articulo")
-    let pre = Number(prompt(`Ingrese el precio del articulo`))
-    let cant = Number(prompt(`Ingrese cuantas  unidades compro`))
-    datos.nombre.push(nom)
-    datos.precio.push(pre)
-    datos.cantidad.push(cant)
-    can = prompt("Desea ingresar los datos de otro articulo (si o no): ")
-}
-let vlr=0;
-console.table(datos)
-for(var i=0;i<datos.precio.length;i++){
-    vlr += (datos.precio[i]*datos.cantidad[i])
+    medida_del_cuadrado:[],
+    Perimetro_del_cuadrado:[],
+    Medidas_del_triangulo:{altura:[],base:[]},
+    area_del_triangulo:[]
 }
 
-console.log(`El valor a pagar de toda la factura es: ${vlr}`)
+let can="si";
+while(can=="si"){
+    let lado=prompt("Ingrese la medida de los lado del cuadrado")
+    
+    let base = prompt("Ingrese la base del triangulo")
+    let altura = prompt("Ingrese la altura del triangulo")
+    
+    datos.medida_del_cuadrado.push(lado)
+    datos.Perimetro_del_cuadrado.push(lado*4)
+    datos.Medidas_del_triangulo.altura.push(altura)
+    datos.Medidas_del_triangulo.base.push(base)
+    datos.area_del_triangulo.push((base*altura)/2)
+
+    console.log(`El perimetro del cuadrado es ${lado*4}`)
+    console.log(`El Area del triangulo es: ${(base*altura)/2}`)
+
+    can = prompt("Desea ingresar otros datos para ser recalculados(si o no):")
+}
+console.table(datos)
+
+
