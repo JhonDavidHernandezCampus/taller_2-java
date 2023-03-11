@@ -1,37 +1,28 @@
 /*
-9. N atletas han pasado a finales en salto triple en los juegos
-olímpicos femenino de 2022. Diseñe un programa que pida por
-teclado los nombres de cada atleta finalista y a su vez, sus
-marcas del salto en metros. Informar el nombre de la atleta
-campeona que se quede con la medalla de oro y si rompió
-récord, reportar el pago que será de 500 millones. El récord
-esta en 15,50 metros.
+10. Desarrolle un programa cíclico que capture un dato
+numérico cada vez, y los vaya acumulando. El programa se
+detiene cuando el usuario digita un cero. El programa debe
+mostrar: LA SUMATORIA DE LOS VALORES, EL VALOR DEL
+PROMEDIO, CUÁNTOS VALORES FUERON DIGITADOS, MAYOR
+VALOR Y MENOR VALOR.
 */
+numeros=[];
 
-let datos = {
-    nombre:[],
-    msalto:[],
-}
-
-let can="si";
+let can = "si";
 while(can=="si"){
-    let nom =prompt("Ingrese el nombre del atleta")
-    let sal = Number(prompt(`Ingrese la distancia del salto del atleta ${nom} (en metros (el . separador de desimales))`))
-    datos.nombre.push(nom)
-    datos.msalto.push(sal)
-    
-    can = prompt("Desea ingresar otros datos para ser recalculados(si o no):")
+    num = Number(prompt(`Ingrese otro numero (digite 0 para terminar)`))
+    num == 0?can="no":numeros.push(num);
 }
 
-var maximo=Math.max(...datos.msalto)
-var persona =datos.nombre[datos.msalto.indexOf(maximo)]
-console.table(datos)
-console.log(`La persona que se lleva la medalla de ORO es: ${persona}`)
-if(maximo>15.50){
-    console.log(`${persona} ha superado el record y resive 500 millones como bono`) 
-}else{
-    console.log(`${persona} Ha ganado la medalla de oro`)
-}
+var maximo=Math.max(...numeros)
+var minimo=Math.min(...numeros)
+var canda =numeros.length
+const suma = numeros.reduce((acumulado , cur) =>acumulado + cur ,0);
 
+console.table(numeros)
+console.log(`La suma total de los numeros ingresados es: ${suma}`)
+console.log(`La el promedio de los numeros es : ${suma/canda}`)
+console.log(`la cantidad de numeros ingresados fueron ${canda}`)
+console.log(`el numero menor fue ${maximo} Y el numero menor es de ${minimo}`) 
 
 
